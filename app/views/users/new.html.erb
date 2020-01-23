@@ -1,5 +1,6 @@
 <div class="container">
   <%= form_for(@user) do |f| %>
+      <%= render 'layouts/errors' %>
 
       <%= f.label :username %>
       <%= f.text_field :username, class: 'form-control' %>

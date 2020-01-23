@@ -17,6 +17,7 @@ https://github.com/lucasmazo32/re-former.git
 - Afterwards, run "rails db:create" and "rails db:migrate" on your terminal.
 - We have a cool gem! To use it, run the rails console typing "rails c" in your terminal and when it loads type in the first line "Hirb.enable", it will return true if everything is working. Now you can see the tables of the database!
 - Following the instructions of the Odin project, we only created the routes for editing and creating (new, edit, create, and update) and we didn't change the path, thus the only working paths are "/users/new" and "/users/:id/edit".
+- The root rout gives you the list of the user's username and email, so you can have a visual aid for the user's information without having to rely on the rails console.
 
 # Built with
 
