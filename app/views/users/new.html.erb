@@ -1,18 +1,35 @@
-<%= form_for(@user) do |f| %>
+<div class="container">
+  <%= form_for(@user) do |f| %>
 
-		<%= f.label :username %>
-		<%= f.text_field :username %>
+      <%= f.label :username %>
+      <%= f.text_field :username, class: 'form-control' %>
 
-		<%= f.label :email %>
-		<%= f.text_field :email %>
-    
-		<%= f.label :password %>
-		<%= f.password_field :password %> 
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control' %>
 
-		<%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %> 
 
-	<%= f.submit %>
-<% end %>
+      <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-	
+    <%= f.submit 'Sign up', class: 'btn btn-larg btn-primary' %>
+  <% end %> 
+</div>
+
+<%#<%= form_tag users_path do %>
+<%#
+<%#  <%= label_tag :username %>
+<%#  <%= text_field_tag :username, params[:username] %>
+<%#
+<%#  <%= label_tag :email %>
+<%#  <%= text_field_tag :email %>
+<%#
+<%#  <%= label_tag :password %>
+<%#  <%= password_field_tag :password %>
+<%#
+<%#  <%= label_tag :password_confirmation %>
+<%#  <%= password_field_tag :password_confirmation %>
+<%#
+<%#  <%= submit_tag "Sign up", class: "btn btn-large btn-primary" %>
+<%#<% end %>
