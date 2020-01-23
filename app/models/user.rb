@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
   SPACE = /\s/.freeze
   validates :username, presence: true, uniqueness: { case_sensitive: false },

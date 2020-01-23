@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to new_user_path
     else
-      render "new"
+      render 'new'
     end
   end
 
@@ -23,12 +23,9 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to new_user_path
     else
-      render "edit"
+      render 'edit'
     end
-
-    
   end
-
 
   private
 
