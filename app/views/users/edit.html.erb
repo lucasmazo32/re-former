@@ -1,19 +1,20 @@
-<div class="container">
-  <%= form_for(@user) do |f| %>
-      <%= render 'layouts/errors' %>
-
-      <%= f.label :username %>
-      <%= f.text_field :username, class: 'form-control' %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %> 
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-    <%= f.submit 'Sign up', class: 'btn btn-larg btn-primary' %>
-  <% end %> 
-</div>
+<form accept-charset="UTF-8" action="/users" data-remote="true" method="post">
+  <input type="hidden" name="authenticity_token" value="NRkFyRWxdYNfUg7vYxLOp2SLf93lvnl+QwDWorR42Dp6yZXPhHEb6arhDOIWcqGit8jfnrPwL781/xlrzj63TA==" />
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input class="form-control" id="user_username" name="user[username]" type="username">
+  </div>
+   <div class="form-group">
+    <label for="email">Email</label>
+    <input class="form-control" id="user_email" name="user[email]" type="email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input class="form-control" id="user_password" name="user[password]" type="password">
+  </div>
+   <div class="form-group">
+    <label for="password_confirmation">Confirm Password</label>
+    <input class="form-control" id="user_password_confirmation" name="user[password_confirmation]" type="password">
+  </div>
+  <input class="btn btn-secondary" name="commit" type="submit" value="Sign Up">
+</form>
