@@ -1,8 +1,11 @@
-<div class="jumbotron jumbotron-fluid">
+<!-- Start of Comment -->
+<%# <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <form accept-charset="UTF-8" action="/users" data-remote="true" method="post">
-      <input type="hidden" name="authenticity_token" value="NRkFyRWxdYNfUg7vYxLOp2SLf93lvnl+QwDWorR42Dp6yZXPhHEb6arhDOIWcqGit8jfnrPwL781/xlrzj63TA==" />
-      <div class="form-group">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>
+
+  <!-- Un comment Below -->
+      <%# <div class="form-group">
         <label for="username">Username</label>
         <input class="form-control" id="user_username" name="user[username]" type="username">
       </div>
@@ -19,6 +22,64 @@
         <input class="form-control" id="user_password_confirmation" name="user[password_confirmation]" type="password">
       </div>
       <input class="btn btn-secondary" name="commit" type="submit" value="Sign Up">
-    </form>
+    </form> %>
+
+    <!-- Uncomment Below -->
+
+<!-- End of Comment
+<%#   
+  </div>
+</div>  %> 
+ -->
+ <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <%= form_for @user do |f|%>
+        <ul>
+            <% @user.errors.full_messages.each do |error|%>
+                <li><%= error%></li>
+            <% end %>
+        </ul>
+    <% end %>
   </div>
 </div>
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="display-6"> RAILS FORM CREATION WITH FORM_FOR  </h2>
+
+
+    <%= form_for @user do |f|%>
+        <%= f.label :username %><br>
+        <%= f.text_field :username %><br>
+        <%= f.label :email %><br>
+        <%= f.email_field :email %><br>
+        <%= f.label :password %><br>
+        <%= f.password_field :password%> <br>
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation%> <br>
+        <%= f.submit %>
+    <%end %>
+  </div>
+</div>
+
+
+
+
+<%# RAILS FORM CREATION WITH FORM_TAG %>
+
+<!--
+<%= form_tag("/users", method: "post") do %>
+    <%= label_tag(:username, "Username") %><br>
+    <%= text_field_tag(:username)%><br>
+    <%= label_tag(:email, "Email")%><br>
+    <%= email_field_tag(:email)%><br>
+    <%= label_tag(:password, "Password")%><br>
+    <%= password_field_tag(:password)%><br>
+    <%= label_tag(:password_confirmation, "Password")%><br>
+    <%= password_field_tag(:password_confirmation)%><br>
+    <%= submit_tag("Create User")%>
+<% end %>
+-->
+
+

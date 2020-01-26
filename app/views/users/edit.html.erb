@@ -1,20 +1,51 @@
-<form accept-charset="UTF-8" action="/users" data-remote="true" method="post">
-  <input type="hidden" name="authenticity_token" value="NRkFyRWxdYNfUg7vYxLOp2SLf93lvnl+QwDWorR42Dp6yZXPhHEb6arhDOIWcqGit8jfnrPwL781/xlrzj63TA==" />
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input class="form-control" id="user_username" name="user[username]" type="username">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <!--
+<%= form_for @user do |f|%>
+     <%= f.label :username%><br>
+    <%= f.text_field :username%><br>
+    <%= f.label :email %><br>
+    <%= f.email_field :email%><br>
+    <%= f.label :password %><br>
+    <%= f.password_field :password%> <br>
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation%> <br>
+    <%= f.submit %>
+<%end%>
+-->
+
+<%# RAILS FORM FOR WITH ERRORS %>
+
+<%= form_for @user do |f|%>
+    <ul>
+        <% @user.errors.full_messages.each do |error|%>
+            <li><%= error%></li>
+        <% end %>
+    </ul>
+    
+    <%= f.label :username %><br>
+    <%= f.text_field :username%><br>
+
+    <%= f.label :email %><br>
+    <%= f.email_field :email%><br>
+
+    <%= f.label :password %><br>
+    <%= f.password_field :password%> <br>
+
+     <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation%> <br>
+    
+    <%= f.submit %><br>
+<%end%>
+
+  <div class="container">
+  <p>
+  <hr class="my-4">
+  <button type="button" class="btn btn-dark"> <a href="/users">Users</a></button> 
+  </p>
   </div>
-   <div class="form-group">
-    <label for="email">Email</label>
-    <input class="form-control" id="user_email" name="user[email]" type="email">
   </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input class="form-control" id="user_password" name="user[password]" type="password">
-  </div>
-   <div class="form-group">
-    <label for="password_confirmation">Confirm Password</label>
-    <input class="form-control" id="user_password_confirmation" name="user[password_confirmation]" type="password">
-  </div>
-  <input class="btn btn-secondary" name="commit" type="submit" value="Sign Up">
-</form>
+</div>
+
+
+
