@@ -1,0 +1,16 @@
+<h1>List of Entries</h1>
+<div class="container">
+     <ul>
+      <% @users.each do |user| %>
+        <li>
+          <h3><%= user.username %></h3>
+          <p><%= user.email %></p>
+          <button type="button" class="btn btn-dark"> <%=link_to 'Edit User', edit_user_path(user)%></button> 
+        </li>
+      <% end %>
+    </ul>
+ </div>
+
+<div class="container">
+  <button type="button" class="btn btn-dark"> <a href="/users/new">New User</a></button> 
+</div>
